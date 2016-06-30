@@ -1,0 +1,1 @@
+create table traveller_user(name varchar2(20),gender varchar2(20),mobile number(13),email varchar2(50) primary-key,password varchar2(20));

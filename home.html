@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Traveller</title>
+	 <link rel="shortcut icon" type="image/x-icon" href="img/bus.png" />
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+		
+		
+		
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	
+	
+	<!-- Datepicker Jquery src -->
+	<link href="datepicker/jquery.datepick.css" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="datepicker/jquery.plugin.js"></script>
+	<script src="datepicker/jquery.datepick.js"></script>
+	
+	<script>
+	$(function() {
+		$('#datepicker').datepick();
+	});
+
+	function showDate(date) {
+		alert('The date chosen is ' + date);
+	}
+</script>
+	
+	<script>
+	
+			function returnDate(){
+			
+				var today = new Date();
+				var dd = today.getDate();
+				var mm = today.getMonth()+1; //January is 0!
+				var yyyy = today.getFullYear();
+
+				if(dd<10) {
+					dd='0'+dd
+				} 
+
+				if(mm<10) {
+					mm='0'+mm
+				} 
+				today = mm+'/'+dd+'/'+yyyy;
+				document.getElementById('datepicker').value=today ;
+				}
+			
+	
+	</script>
+	
+		<script>
+		  $(function() {
+			$( "#datepicker" ).datepicker();
+			 inline: true
+		  });
+		</script>
+	
+	
+  </head>
+  <body onload="returnDate()">
+    
+<div class="modal-dialog">
+	<div class="modal-content">
+	
+		<div class="modal-header">
+			<h1 class="text-success"><img src="img/bus.png" class="img-circle" alt="Traveller" width="40" height="40">&nbsp Book Bus Tickets</h1>
+		</div>
+		
+	<div class="modal-body">
+	
+	<form class="center-block" action="/" method="GET"> <!--form tag start -->
+	
+		<div class="form-group has-feedback">
+			<label class="text-success" for="from">From (Origin)</label>
+			
+			<input type="text" class="form-control" id="from" size="20" name="from" autocomplete=on required="required" placeholder="from (origin)" >
+			<span class="glyphicon glyphicon-arrow-right form-control-feedback"></span>
+			
+		</div>
+	
+	
+		<div class="form-group has-feedback">
+			<label class="text-success" for="to">To (Destination)</label>
+			<input type="text" class="form-control" id="to" size="20" name="to" autocomplete=on required="required" placeholder="To (Destination)" >
+			<span class=" glyphicon glyphicon-map-marker form-control-feedback"></span>
+		</div>
+		
+		<div class="form-group has-feedback">
+			<label class="text-success" for="date">select date</label>
+			<input type="text" class="form-control " id="datepicker"  name="date" autocomplete=off readonly="readonly" required="required" placeholder="dd/mm/yyyy" >
+			<span class="  glyphicon glyphicon-calendar form-control-feedback"></span>
+		</div>
+		
+		<div class="form-group has-feedback">
+			<label class="text-success" for="seats">Seats required</label>
+			<input type="number" class="form-control " id="seats"  name="date" autocomplete=off  required="required" min="1" max="5" >
+			<span class="  glyphicon glyphicon-th form-control-feedback"></span>
+		</div>
+		
+		<div class="form-group has-feedback">
+			<input type="submit" class="btn btn-block btn-lg btn-success" value="Search Buses"><br/></input>		
+		</div>
+		
+	
+	</form> <!--form close -->
+	
+	</div>
+	
+	</div>
+</div>
+
+	
+	
+	
+</div>
+
+
+  </body>
+</html>

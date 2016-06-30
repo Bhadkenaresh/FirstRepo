@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+  </head>
+  <body>
+    
+	
+	
+
+	<script>
+	
+	function add()
+	{
+		console.log("inside add()");
+		
+		if($("#pickup").val() !="")
+		{
+			var i=0;
+			var pickup = $("#pickup").val();
+			
+			$("#pickupPoints").append($("<li class=\"list-group-item list-group-item-success\">"+pickup+"<span class=\"glyphicon glyphicon-remove form-control-feedback bg-danger text-danger\"></span></li>"));
+			
+			$("#pickup").val("");
+			console.log("pickup added..");
+		}
+		else
+		{
+			alert("Empty input !");
+		}
+		
+		
+		
+		
+	}
+	
+	function del()
+	{
+		 alert("del clicked...");
+		 $(".btn").closest(".input-group").remove();
+	}
+	
+	
+	</script>
+	
+	
+  </head>
+  <body>
+  
+
+	
+	
+	<div class="modal-dialog">
+	<div class="modal-content">
+	
+		<div class="modal-header">
+			<h1 class="text-success"><img src="img/bus.png" class="img-circle" alt="Traveller" width="40" height="40">&nbsp Add New Route</h1>
+		</div>
+		
+	<div class="modal-body">
+	
+	<form class="center-block" action="" method="GET"> <!--form tag start -->
+	
+		<div class="form-group has-feedback">
+			<label class="text-success" for="route_id">Route ID</label>
+			<input type="text" class="form-control" id="route_id" size="20" name="route_id" required="required" placeholder="Route ID">
+			<span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+		</div>
+		
+		<div class="form-group has-feedback">
+			<label class="text-success" for="from">From (Origin)</label>
+			
+			<input type="text" class="form-control" id="from" size="20" name="from" autocomplete=on required="required" placeholder="from (origin)" >
+			<span class="glyphicon glyphicon-arrow-right form-control-feedback"></span>
+			
+		</div>
+		
+		
+		<div class="selectpicker">
+			<select id="selectBox"></select>
+		</div>
+		
+			<div class="form-group has-feedback">
+			<label class="text-success" for="pickup">PickUp Points</label>
+			<input type="text" class="form-control" id="pickup" size="20" name="to" autocomplete=on required="required" placeholder="Pickup points seperated by comma " >
+			<span class=" glyphicon glyphicon-map-marker form-control-feedback"></span>
+		</div>
+		
+		<div class="form-group has-feedback">
+			<label class="text-success" for="to">To (Destination)</label>
+			<input type="text" class="form-control" id="to" size="20" name="to" autocomplete=on required="required" placeholder="To (Destination)" >
+			<span class=" glyphicon glyphicon-map-marker form-control-feedback"></span>
+		</div>
+		
+	
+
+
+		
+		
+		
+		
+		<div class="form-group">
+			<input type="submit" class="btn btn-block btn-lg btn-success" value="Add Travel"><br/>
+		</div>
+		
+	
+	</form> <!--form close -->
+	
+	
+	
+	</div>
+	
+	</div>
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </body>
+</html>
